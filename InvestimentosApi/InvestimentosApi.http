@@ -1,0 +1,70 @@
+@baseUrl = http://localhost:5023
+@controller = investimentos
+
+### 🟢 GET - Listar todos os investimentos
+GET {{baseUrl}}/api/{{controller}}
+Accept: application/json
+
+### 🔵 POST - Criar um novo investimento (Tesouro Direto)
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+
+{
+  "nomeAtivo": "Tesouro Direto",
+  "valor": 1000.00,
+  "dataCompra": "2025-09-21T00:00:00",
+  "quantidade": 2
+}
+
+### 🔵 POST - Criar um novo investimento (Petrobras)
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+
+{
+  "nomeAtivo": "Ações Petrobras",
+  "valor": 30000.50,
+  "dataCompra": "2025-08-15T00:00:00",
+  "quantidade": 10
+}
+
+### 🔵 POST - Criar um novo investimento (CDB)
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+
+{
+  "nomeAtivo": "CDB Banco XP",
+  "valor": 5000.00,
+  "dataCompra": "2025-09-10T00:00:00",
+  "quantidade": 1
+}
+
+### 🔵 POST - Criar um novo investimento (Fundos Imobiliários)
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+
+{
+  "nomeAtivo": "Fundos Imobiliários",
+  "valor": 12000.00,
+  "dataCompra": "2025-07-01T00:00:00",
+  "quantidade": 15
+}
+
+### 🟡 GET - Obter investimento por ID
+GET {{baseUrl}}/api/{{controller}}/22
+Accept: application/json
+
+### 🟠 PUT - Atualizar investimento por ID
+PUT {{baseUrl}}/api/{{controller}}/1
+Content-Type: application/json
+
+{
+    "id": 22,
+    "nomeAtivo": "Ações Petrobras",
+    "valor": 30000.5,
+    "dataCompra": "2025-08-15T00:00:00",
+    "quantidade": 11
+}
+
+### 🔴 DELETE - Remover investimento por ID
+DELETE {{baseUrl}}/api/{{controller}}/22
+Accept: application/json

@@ -1,0 +1,11 @@
+E:\Dev\Sprintc#_3\InvestimentosModel\bin\Debug\net9.0\InvestimentosModel.deps.json
+E:\Dev\Sprintc#_3\InvestimentosModel\bin\Debug\net9.0\InvestimentosModel.dll
+E:\Dev\Sprintc#_3\InvestimentosModel\bin\Debug\net9.0\InvestimentosModel.pdb
+E:\Dev\Sprintc#_3\InvestimentosModel\obj\Debug\net9.0\InvestimentosModel.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dev\Sprintc#_3\InvestimentosModel\obj\Debug\net9.0\InvestimentosModel.AssemblyInfoInputs.cache
+E:\Dev\Sprintc#_3\InvestimentosModel\obj\Debug\net9.0\InvestimentosModel.AssemblyInfo.cs
+E:\Dev\Sprintc#_3\InvestimentosModel\obj\Debug\net9.0\InvestimentosModel.csproj.CoreCompileInputs.cache
+E:\Dev\Sprintc#_3\InvestimentosModel\obj\Debug\net9.0\InvestimentosModel.dll
+E:\Dev\Sprintc#_3\InvestimentosModel\obj\Debug\net9.0\refint\InvestimentosModel.dll
+E:\Dev\Sprintc#_3\InvestimentosModel\obj\Debug\net9.0\InvestimentosModel.pdb
+E:\Dev\Sprintc#_3\InvestimentosModel\obj\Debug\net9.0\ref\InvestimentosModel.dll

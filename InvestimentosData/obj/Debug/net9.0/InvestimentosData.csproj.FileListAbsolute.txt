@@ -1,0 +1,17 @@
+E:\Dev\Sprintc#_3\InvestimentosData\bin\Debug\net9.0\InvestimentosData.deps.json
+E:\Dev\Sprintc#_3\InvestimentosData\bin\Debug\net9.0\InvestimentosData.runtimeconfig.json
+E:\Dev\Sprintc#_3\InvestimentosData\bin\Debug\net9.0\InvestimentosData.dll
+E:\Dev\Sprintc#_3\InvestimentosData\bin\Debug\net9.0\InvestimentosData.pdb
+E:\Dev\Sprintc#_3\InvestimentosData\bin\Debug\net9.0\InvestimentosModel.dll
+E:\Dev\Sprintc#_3\InvestimentosData\bin\Debug\net9.0\InvestimentosModel.pdb
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\InvestimentosData.csproj.AssemblyReference.cache
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\InvestimentosData.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\InvestimentosData.AssemblyInfoInputs.cache
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\InvestimentosData.AssemblyInfo.cs
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\InvestimentosData.csproj.CoreCompileInputs.cache
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\Investim.27C5718C.Up2Date
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\InvestimentosData.dll
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\refint\InvestimentosData.dll
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\InvestimentosData.pdb
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\InvestimentosData.genruntimeconfig.cache
+E:\Dev\Sprintc#_3\InvestimentosData\obj\Debug\net9.0\ref\InvestimentosData.dll

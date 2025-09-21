@@ -1,0 +1,17 @@
+E:\Dev\Sprintc#_3\InvestimentosBusiness\bin\Debug\net9.0\InvestimentosBusiness.deps.json
+E:\Dev\Sprintc#_3\InvestimentosBusiness\bin\Debug\net9.0\InvestimentosBusiness.dll
+E:\Dev\Sprintc#_3\InvestimentosBusiness\bin\Debug\net9.0\InvestimentosBusiness.pdb
+E:\Dev\Sprintc#_3\InvestimentosBusiness\bin\Debug\net9.0\InvestimentosData.dll
+E:\Dev\Sprintc#_3\InvestimentosBusiness\bin\Debug\net9.0\InvestimentosModel.dll
+E:\Dev\Sprintc#_3\InvestimentosBusiness\bin\Debug\net9.0\InvestimentosData.pdb
+E:\Dev\Sprintc#_3\InvestimentosBusiness\bin\Debug\net9.0\InvestimentosModel.pdb
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\InvestimentosBusiness.csproj.AssemblyReference.cache
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\InvestimentosBusiness.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\InvestimentosBusiness.AssemblyInfoInputs.cache
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\InvestimentosBusiness.AssemblyInfo.cs
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\InvestimentosBusiness.csproj.CoreCompileInputs.cache
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\Investim.7A1907B0.Up2Date
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\InvestimentosBusiness.dll
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\refint\InvestimentosBusiness.dll
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\InvestimentosBusiness.pdb
+E:\Dev\Sprintc#_3\InvestimentosBusiness\obj\Debug\net9.0\ref\InvestimentosBusiness.dll
