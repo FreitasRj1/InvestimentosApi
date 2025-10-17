@@ -1,6 +1,7 @@
-using InvestimentosBusiness;
+using InvestimentosData;
 using InvestimentosModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace InvestimentosApi.Controllers
 {
@@ -8,57 +9,73 @@ namespace InvestimentosApi.Controllers
     [Route("api/[controller]")]
     public class InvestimentosController : ControllerBase
     {
-        private readonly InvestimentoService _service;
+        private readonly ApplicationDbContext _context;
 
-        // Injeção de dependência via interface (boa prática)
-        public InvestimentosController(InvestimentoService service)
+        public InvestimentosController(ApplicationDbContext context)
         {
-            _service = service;
+            _context = context;
         }
 
+        // GET: api/investimentos
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var investimentos = await _service.GetAllAsync();
+            var investimentos = await _context.Investimentos.ToListAsync();
             return Ok(investimentos);
         }
 
+        // GET: api/investimentos/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var investimento = await _service.GetByIdAsync(id);
-            if (investimento == null)
-                return NotFound();
-
+            var investimento = await _context.Investimentos.FindAsync(id);
+            if (investimento == null) return NotFound();
             return Ok(investimento);
         }
 
+        // POST: api/investimentos
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Investimento investimento)
+        public async Task<IActionResult> Create(Investimento investimento)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            await _service.AddAsync(investimento);
-
+            _context.Investimentos.Add(investimento);
+            await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetById), new { id = investimento.Id }, investimento);
         }
 
+        // PUT: api/investimentos/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Investimento investimento)
+        public async Task<IActionResult> Update(int id, Investimento investimento)
         {
-            if (id != investimento.Id)
-                return BadRequest("O ID da URL não corresponde ao ID do objeto.");
+            if (id != investimento.Id) return BadRequest();
 
-            await _service.UpdateAsync(investimento);
+            _context.Entry(investimento).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
             return NoContent();
         }
 
+        // DELETE: api/investimentos/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _service.DeleteAsync(id);
+            var investimento = await _context.Investimentos.FindAsync(id);
+            if (investimento == null) return NotFound();
+
+            _context.Investimentos.Remove(investimento);
+            await _context.SaveChangesAsync();
             return NoContent();
+        }
+
+        // 🔎 Pesquisa com LINQ
+        [HttpGet("pesquisar/{valorMinimo}")]
+        public IActionResult FiltrarPorValor(decimal valorMinimo)
+        {
+            var resultados = _context.Investimentos
+                .Where(i => i.Valor >= valorMinimo)
+                .OrderByDescending(i => i.Valor)
+                .ToList();
+
+            return Ok(resultados);
         }
     }
 }

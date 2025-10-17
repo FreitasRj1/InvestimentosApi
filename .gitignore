@@ -1,0 +1,22 @@
+# Ignore build outputs
+bin/
+obj/
+*.user
+*.db
+*.log
+*.sqlite
+*.suo
+
+# Ignore Visual Studio and VSCode stuff
+.vs/
+.vscode/
+*.exe
+*.dll
+*.pdb
+
+# Ignore system files
+Thumbs.db
+.DS_Store
+
+# Ignore environment files
+.env

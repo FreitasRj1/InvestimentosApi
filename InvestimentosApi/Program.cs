@@ -1,37 +1,51 @@
 using InvestimentosBusiness;
 using InvestimentosData;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Adiciona Controllers
 builder.Services.AddControllers();
 
-// Configuração do OpenAPI nativo
-builder.Services.AddOpenApi();
+// Configura Swagger (OpenAPI)
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Investimentos API",
+        Version = "v1",
+        Description = "API de investimentos com integração pública de CEP e consultas LINQ."
+    });
+});
 
-// Injeta a Service
+// Injeta o Service
 builder.Services.AddScoped<InvestimentoService>();
 
-// Configuração do banco (Oracle)
+// Configuração do banco Oracle
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// HTTP Client para chamadas externas (API de CEP)
+builder.Services.AddHttpClient();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Middleware do Swagger
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Investimentos API v1");
+    });
 }
-
-// 🔧 Desabilitar redirecionamento HTTPS por enquanto
-// app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-// 🔧 Rota de teste para confirmar se a API sobe
-app.MapGet("/", () => "API está rodando!");
+// Endpoint raiz
+app.MapGet("/", () => "🚀 API de Investimentos rodando com Swagger e API de CEP integrada!");
 
 app.MapControllers();
 
