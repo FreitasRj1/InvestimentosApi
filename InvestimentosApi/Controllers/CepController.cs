@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
 
 namespace InvestimentosApi.Controllers
 {
@@ -11,23 +12,29 @@ namespace InvestimentosApi.Controllers
         public CepController(IHttpClientFactory httpClientFactory)
         {
             _httpClient = httpClientFactory.CreateClient();
+            _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         [HttpGet("{cep}")]
         public async Task<IActionResult> GetCepInfo(string cep)
         {
-            if (string.IsNullOrWhiteSpace(cep))
-                return BadRequest("Informe um CEP válido.");
+            cep = cep.Replace("-", "").Trim();
+
+            if (string.IsNullOrWhiteSpace(cep) || cep.Length != 8)
+                return BadRequest("Informe um CEP válido com 8 dígitos.");
 
             var url = $"https://viacep.com.br/ws/{cep}/json/";
 
             try
             {
                 var response = await _httpClient.GetAsync(url);
-                response.EnsureSuccessStatusCode();
+
+                if (!response.IsSuccessStatusCode)
+                    return StatusCode((int)response.StatusCode, "Erro ao consultar o serviço ViaCEP.");
 
                 var json = await response.Content.ReadAsStringAsync();
-                return Ok(json);
+                return Content(json, "application/json");
             }
             catch (Exception ex)
             {
